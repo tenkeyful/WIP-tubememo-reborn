@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> Project migrated to https://github.com/tenkeyful/youtube-commenter-info
+
 ## Technical details
 > `POST: https://www.youtube.com/youtubei/v1/account/get_profile_card`
 >
