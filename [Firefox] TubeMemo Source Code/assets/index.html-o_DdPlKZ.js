@@ -1,0 +1,1 @@
+import"./modulepreload-polyfill-B5Qt9EMX.js";import{B as o}from"./browser-polyfill-BcwRc9pd.js";import"./_commonjsHelpers-D6-XlEtG.js";o.devtools.panels.create("Dev Tools","icon-32.png","src/pages/devtools/index.html").catch(console.log);

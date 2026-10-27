@@ -1,0 +1,67 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+  "manifest_version": 3,
+  "name": "TubeMemo – Notes, Summaries & Insights from Video",
+  "description": "Take notes, summarize, extract insights, and revisit ideas — all from any YouTube video.",
+  "action": {
+    "default_popup": "src/pages/popup/index.html",
+    "default_icon": {
+      "32": "icon-32.png"
+    }
+  },
+  "icons": {
+    "128": "icon-128.png"
+  },
+  "permissions": [
+    "storage",
+    "sidePanel",
+    "activeTab",
+    "tabs"
+  ],
+  "host_permissions": [
+    "*://*.youtube.com/*"
+  ],
+  "content_scripts": [
+    {
+      "js": [
+        "assets/index.tsx-loader-BQWP68ez.js"
+      ],
+      "matches": [
+        "*://*.youtube.com/*"
+      ],
+      "css": [
+        "contentStyle.css"
+      ]
+    }
+  ],
+  "devtools_page": "src/pages/devtools/index.html",
+  "web_accessible_resources": [
+    {
+      "matches": [],
+      "resources": [
+        "contentStyle.css",
+        "icon-128.png",
+        "icon-32.png"
+      ],
+      "use_dynamic_url": false
+    },
+    {
+      "matches": [
+        "*://*.youtube.com/*"
+      ],
+      "resources": [
+        "assets/index.tsx-CxOmHvLp.js"
+      ],
+      "use_dynamic_url": false
+    }
+  ],
+  "side_panel": {
+    "default_path": "src/pages/panel/index.html"
+  },
+  "version": "1.0.5.7",
+  "background": {
+    "service_worker": "service-worker-loader.js",
+    "type": "module"
+  }
+}

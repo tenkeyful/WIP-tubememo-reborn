@@ -1,0 +1,79 @@
+{
+  "manifest_version": 3,
+  "version": "1.0.5.7",
+  "name": "TubeMemo \u2013 Youtube Note, Summary & Insight",
+  "description": "Take notes, summarize, extract insights, and revisit ideas \u2014 all from any YouTube video.",
+  "action": {
+    "default_popup": "src/pages/popup/index.html",
+    "default_icon": {
+      "32": "icon-32.png"
+    }
+  },
+  "icons": {
+    "128": "icon-128.png"
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "tabs",
+    "contextMenus"
+  ],
+  "sidebar_action": {
+    "default_title": "TubeMemo",
+    "default_panel": "src/pages/panel/index.html",
+    "default_icon": {
+      "32": "icon-32.png"
+    }
+  },
+  "host_permissions": [
+    "*://*.youtube.com/*"
+  ],
+  "content_scripts": [
+    {
+      "js": [
+        "assets/index.js-loader-YQWshGDI.js"
+      ],
+      "matches": [
+        "*://*.youtube.com/*"
+      ],
+      "css": [
+        "contentStyle.css"
+      ]
+    }
+  ],
+  "devtools_page": "src/pages/devtools/index.html",
+  "web_accessible_resources": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "resources": [
+        "contentStyle.css",
+        "icon-128.png",
+        "icon-32.png"
+      ]
+    },
+    {
+      "matches": [
+        "*://*.youtube.com/*"
+      ],
+      "resources": [
+        "assets/index.js-DGUShLe3.js"
+      ]
+    }
+  ],
+  "side_panel": {
+    "default_path": "src/pages/panel/index.html"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "tubememo@tubememo.com"
+    }
+  },
+  "background": {
+    "scripts": [
+      "service-worker-loader.js"
+    ],
+    "type": "module"
+  }
+}
